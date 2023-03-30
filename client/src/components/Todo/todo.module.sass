@@ -1,0 +1,137 @@
+section
+    width: 100%
+    padding-bottom: 30px
+    background-color: #ffffff
+    font-family: Gilroy !important
+    .container
+        width: 90%
+        margin: 0 auto
+        display: flex
+        justify-content: center
+        column-gap: 20px
+        row-gap: 20px
+        flex-wrap: wrap
+        .not_found
+            font-size: 40px
+            font-weight: 600
+            margin-top: 100px
+            color: #b5b5b5
+        .todo
+            width: 31%
+            height: 400px
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3)
+            border-radius: 10px
+            padding: 10px
+            &:hover .text .block .icon_remove *
+                display: block
+            .text
+                height: 86%
+                .block
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    position: relative
+                    .icon_remove
+                        color: red
+                        position: absolute
+                        right: 0  
+                        *
+                            display: none
+                            color: red
+                            font-size: 28px
+                            cursor: pointer
+                    h1
+                        font-size: 28px
+                        margin-bottom: 8px
+                span
+                    font-size: 20px
+                    word-wrap: break-word
+            .info
+                height: 14%
+                display: flex
+                justify-content: space-between
+                align-items: center
+                &__more
+                    *
+                        color: #fff
+                        border-color: #fff
+                &__done
+                    margin-left: 30px
+                    .active
+                        color: green
+                    .completed
+                        color: #ff0000
+                &__date
+                    display: flex
+                    align-items: center
+                    .icon_blue
+                        font-size: 30px
+                        color: blue
+                    .icon_white
+                        font-size: 30px
+                        color: #fff
+                    span
+                        font-weight: 500
+                        font-size: 15px
+        .add_todo
+            height: 400px
+            width: 31%
+            font-size: 140px
+            font-weight: 400
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            border-radius: 9px
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3)
+            &:hover
+                background-color: #e7e5e5
+            &:active
+                background-color: #fff
+
+
+    @media (max-width: 1200px)
+        .container 
+            .todo
+                width: 39%
+                h1
+                    font-size: 26px
+            .add_todo
+                width: 39%
+
+                
+    @media (max-width: 1024px)
+        .container
+            .todo
+                width: 48%
+                height: 380px
+                h1
+                    font-size: 26px
+            .add_todo
+                width: 45%
+                height: 380px
+
+    @media (max-width: 768px)
+        .container
+            .todo
+                width: 90%
+                h1
+                    font-size: 24px
+                p
+                    font-size: 19px
+            .add_todo
+                display: none
+
+    @media (max-width: 576px)
+        .container
+            .todo
+                width: 99%
+                h1
+                    font-size: 23px
+                p
+                    font-size: 18px
+            .add_todo
+                display: none
+
+
+        
