@@ -31,10 +31,10 @@ const Header: React.FC = (): JSX.Element => {
         {!token ? (
           <>
             <NavLink to="/login">
-              <span className={style.login}>Логин</span>
+              <span>Логин</span>
             </NavLink>
-            <NavLink to="/registr">
-              <span className={style.registr}>Регистрация</span>
+            <NavLink to="/registration">
+              <span>Регистрация</span>
             </NavLink>
           </>
         ) : (

@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './main.module.sass';
-import prog from '../../assets/prog.jpg';
+import prog from '../../assets/world.jpg';
 
 const Main: React.FC = (): JSX.Element => {
   return (

@@ -4,10 +4,11 @@ header
     background-color: #0c0f18
     display: flex
     justify-content: space-around
+    border-bottom: 1px solid gray
     position: relative
     .logo
         width: 140px
-        height: 80px
+        height: 79px
         cursor: pointer
     .auth
         width: 350px
@@ -21,10 +22,16 @@ header
             span
                 cursor: pointer
                 color: #fff
-        .registr
-            *
-                font-size: 28px
-                margin-top: 6px
+                font-size: 20px
+            span::after 
+                content: ''
+                display: block
+                width: 0
+                height: 2px
+                background: #606060
+                transition: width .2s
+            span:hover::after 
+                width: 100%
         .logOut
             *
                 font-size: 30px
