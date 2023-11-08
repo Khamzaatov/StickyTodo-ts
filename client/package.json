@@ -1,7 +1,7 @@
 {
   "name": "client-ts",
   "version": "0.1.0",
-  "homepage": "https://github.com/Khamzaatov/StickyTodo-ts.git",
+  "homepage": "https://github.com/Khamzaatov/StickyTodo-ts/tree/main/client",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
