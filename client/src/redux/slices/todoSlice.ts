@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import Todo from './../../types/TodoType';
-import { addTodos, fetchTodos, removeTodos } from '../thunks/todoThunk';
-import { checkTodos } from './../thunks/todoThunk';
+import { addTodos, editTodos, fetchTodos, removeTodos, checkTodos } from '../thunks/todoThunk';
 
 type TodoState = {
   todos: Todo[];
@@ -57,6 +56,15 @@ const todoSlice = createSlice({
         if (todo) {
           todo.completed = !todo.completed;
         }
+      })
+      .addCase(editTodos.fulfilled, (state, action) => {
+        state.todos = state.todos.map((todo) => {
+          if (todo._id === action.payload.id) {
+            todo.title = action.payload.title
+            todo.text = action.payload.text
+          }
+          return todo
+        });
       });
   },
 });

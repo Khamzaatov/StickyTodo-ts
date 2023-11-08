@@ -16,12 +16,15 @@ const Modal: React.FC = (): JSX.Element => {
   };
 
   const addTodoHandler = () => {
-    dispatch(
-      addTodos({
-        title: inputValue,
-        text: textAreaValue,
-      }),
-    );
+    if (inputValue || textAreaValue) {
+      dispatch(
+        addTodos({
+          title: inputValue,
+          text: textAreaValue,
+        }),
+      );
+      dispatch(changeModalStatus(false))
+    }
     setInputValue('');
     setTextAreaValue('');
   };

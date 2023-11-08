@@ -1,9 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import type Todo from './../../types/TodoType';
 
-interface addMessage {
-  title: string;
-  text: string;
+interface changeItem {
+  id?: string;
+  title: string
+  text: string
 }
 
 export const fetchTodos = createAsyncThunk<Todo[], void, { rejectValue: string }>(
@@ -22,7 +23,7 @@ export const fetchTodos = createAsyncThunk<Todo[], void, { rejectValue: string }
   },
 );
 
-export const addTodos = createAsyncThunk<Todo, addMessage, { rejectValue: string }>(
+export const addTodos = createAsyncThunk<Todo, changeItem, { rejectValue: string }>(
   'todos/addTodos',
   async ({ title, text }, { getState, rejectWithValue }) => {
     const { user } = (await getState()) as { user: { userId: string } };
@@ -67,8 +68,6 @@ export const removeTodos = createAsyncThunk<
     return rejectWithValue(data);
   }
 
-  console.log(data);
-
   return { id };
 });
 
@@ -91,5 +90,31 @@ export const checkTodos = createAsyncThunk<{ id: string }, { id: string }, { rej
     }
 
     return { id };
+  },
+);
+
+export const editTodos = createAsyncThunk<changeItem, changeItem, { rejectValue: string }>(
+  'todos/editTodos',
+  async ({ id, title, text }, { getState, rejectWithValue }) => {
+    const { user } = (await getState()) as { user: { userId: string } };
+    const response = await fetch(`http://localhost:4000/todo/edit/${user.userId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        id: id,
+        title: title,
+        text: text,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return rejectWithValue(data);
+    }
+
+    return { id, title, text } as changeItem;
   },
 );

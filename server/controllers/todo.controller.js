@@ -18,14 +18,18 @@ module.exports.todoControllers = {
     const { userId } = req.params;
     try {
       const todos = await Todo.findOne({ userId });
-      const data = await Todo.findByIdAndUpdate(todos._id, {
-        $push: {
-          todos: {
-            title: title,
-            text: text,
+      const data = await Todo.findByIdAndUpdate(
+        todos._id,
+        {
+          $push: {
+            todos: {
+              title: title,
+              text: text,
+            },
           },
         },
-      }, { new: true });
+        { new: true }
+      );
 
       res.json(data.todos);
     } catch (error) {
@@ -74,6 +78,32 @@ module.exports.todoControllers = {
 
       res.json(data);
     } catch (e) {
+      res.json(e.message);
+    }
+  },
+  todoTextEdit: async (req, res) => {
+    const { id, title, text } = req.body;
+    const { userId } = req.params;
+    try {
+      const setTodos = await Todo.findOne({ userId: userId });
+      const todoItem = setTodos.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.title = title;
+          todo.text = text;
+        }
+        return todo;
+      });
+
+      const data = await Todo.findByIdAndUpdate(
+        setTodos._id,
+        {
+          todos: todoItem,
+        },
+        { new: true }
+      );
+
+      res.json(data)
+    } catch (error) {
       res.json(e.message);
     }
   },

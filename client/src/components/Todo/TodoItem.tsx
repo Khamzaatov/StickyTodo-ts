@@ -9,6 +9,7 @@ import { useAppDispatch } from '../../hooks/hook';
 import { removeTodos } from '../../redux/thunks/todoThunk';
 import { checkTodos } from './../../redux/thunks/todoThunk';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const TodoItem: React.FC<Todo> = ({ title, text, _id, completed, createdAt }): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -22,7 +23,7 @@ const TodoItem: React.FC<Todo> = ({ title, text, _id, completed, createdAt }): J
   };
 
   return (
-    <div
+    <div 
       className={style.todo}
       style={completed ? { background: '#00FF7F' } : { background: '#fceb8c' }}
       key={_id}
@@ -34,7 +35,7 @@ const TodoItem: React.FC<Todo> = ({ title, text, _id, completed, createdAt }): J
             <MdDelete />
           </IconButton>
         </div>
-        <span> {text.length < 787 ? text : `${text.substring(0, 787)}...... `}</span>
+        <span> {text.length < 500 ? text : `${text.substring(0, 500)}...... `}</span>
       </div>
       <div className={style.info}>
         <div className={style.info__date}>
@@ -44,7 +45,9 @@ const TodoItem: React.FC<Todo> = ({ title, text, _id, completed, createdAt }): J
           </span>{' '}
         </div>
         <div className={style.info__more}>
-          <Button variant="outlined">Подробнее</Button>
+          <Link to={`/todo/${_id}`}>
+            <Button variant="outlined">Подробнее</Button>
+          </Link>
         </div>
         <div className={style.info__done}>
           {!completed ? (

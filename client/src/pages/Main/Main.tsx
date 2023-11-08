@@ -1,11 +1,13 @@
 import React from 'react';
 import style from './main.module.sass';
-import prog from '../../assets/world.jpg';
+import grom from '../../assets/123.jpg';
 
 const Main: React.FC = (): JSX.Element => {
   return (
     <div className={style.container}>
-      <img src={prog} alt="" />
+      <div className={style.image}>
+        <img src={grom} alt="" />
+      </div>
     </div>
   );
 };

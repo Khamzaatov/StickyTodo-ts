@@ -6,10 +6,40 @@ header
     justify-content: space-around
     border-bottom: 1px solid gray
     position: relative
-    .logo
-        width: 140px
-        height: 79px
-        cursor: pointer
+    .link
+        display: flex
+        align-items: center
+        justify-content: space-around
+        width: 400px
+        .todo
+            color: #fff
+            font-weight: 600
+            width: 100px
+            cursor: pointer
+            position: relative
+            a
+                font-size: 22px
+                color: #fff
+                text-decoration: none
+                font-weight: bold
+            .icon
+                font-size: 22px
+                position: absolute
+                top: 6px
+                left: 80px
+        .todo::after 
+                content: ''
+                display: block
+                width: 0
+                height: 2px
+                background: #606060
+                transition: width .2s
+        .todo:hover::after 
+                width: 100%
+        .logo
+            width: 140px
+            height: 79px
+            cursor: pointer
     .auth
         width: 350px
         display: flex
@@ -22,7 +52,8 @@ header
             span
                 cursor: pointer
                 color: #fff
-                font-size: 20px
+                font-size: 21px
+                font-weight: bold
             span::after 
                 content: ''
                 display: block
@@ -44,19 +75,45 @@ header
                 font-size: 30px
         .username
             font-size: 22px
+            font-weight: bold
 
 @media (max-width: 768px)
-    .add_todo
-        display: block !important
-  
-
-@media (max-width: 576px)
+    .link
+        width: 250px !important
+        .todo
+            a
+                font-size: 20px !important 
+                font-weight: bold 
+            &:hover::after
+                width: 0 !important
     .auth
         .username
-            font-size: 19px !important
+            font-size: 18px !important
+            font-weight: bold
         .add_todo
             display: block !important
             *
-                font-size: 30px
+                font-size: 34px !important
+  
+
+@media (max-width: 576px)
+    .link
+        width: 250px !important
+        .todo
+            a
+                font-size: 18px !important 
+                font-weight: bold 
+            .icon
+                font-size: 19px !important
+                top: 4px !important
+                left: 67px !important
+    .auth
+        .username
+            font-size: 16px !important
+            font-weight: bold
+        .add_todo
+            display: block !important
+            *
+                font-size: 34px !important
 
     
