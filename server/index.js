@@ -19,7 +19,7 @@ const start = async () => {
     try {
         await mongoose.connect(process.env.MONGO)
 
-        app.listen(3000, () => {
+        app.listen(4000, () => {
             console.log('Connecteeeeeeed')
         })
     } catch (error) {
