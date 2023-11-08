@@ -19,8 +19,8 @@ const start = async () => {
     try {
         await mongoose.connect(process.env.MONGO)
 
-        app.listen(process.env.PORT, () => {
-            console.log(`Сервер запущен на порту ${process.env.PORT}`)
+        app.listen(3000, () => {
+            console.log('Connecteeeeeeed')
         })
     } catch (error) {
         console.log(error, 'Ошибка сервера!')
