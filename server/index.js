@@ -13,6 +13,10 @@ app.use(cors())
 app.use(require('./routes/todo.route'))
 app.use(require('./routes/user.route'))
 
+app.get("/", (req, res) => {
+    res.json('Hello my friend!')
+})
+
 mongoose.set('strictQuery', false)
 
 const start = async () => {
@@ -28,4 +32,4 @@ const start = async () => {
 }
 
 start()
-
+ 
