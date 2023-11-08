@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Khamzaatov/StickyTodo-ts.git/static/css/main.0b817723.css",
-    "main.js": "/Khamzaatov/StickyTodo-ts.git/static/js/main.7e7845ec.js",
-    "static/media/prog2.jpg": "/Khamzaatov/StickyTodo-ts.git/static/media/prog2.1d2cee7668e49bf5f4f1.jpg",
-    "static/media/123.jpg": "/Khamzaatov/StickyTodo-ts.git/static/media/123.df968203fbe015eb5b23.jpg",
-    "static/media/prog1.jpg": "/Khamzaatov/StickyTodo-ts.git/static/media/prog1.d2822308c8ddfd7fea0c.jpg",
-    "static/media/borz.jpg": "/Khamzaatov/StickyTodo-ts.git/static/media/borz.d5c328da26ada04827fe.jpg",
-    "index.html": "/Khamzaatov/StickyTodo-ts.git/index.html",
-    "main.0b817723.css.map": "/Khamzaatov/StickyTodo-ts.git/static/css/main.0b817723.css.map",
-    "main.7e7845ec.js.map": "/Khamzaatov/StickyTodo-ts.git/static/js/main.7e7845ec.js.map"
+    "main.css": "/Khamzaatov/StickyTodo-ts/tree/main/client/static/css/main.bd8ce373.css",
+    "main.js": "/Khamzaatov/StickyTodo-ts/tree/main/client/static/js/main.0464b882.js",
+    "static/media/prog2.jpg": "/Khamzaatov/StickyTodo-ts/tree/main/client/static/media/prog2.1d2cee7668e49bf5f4f1.jpg",
+    "static/media/123.jpg": "/Khamzaatov/StickyTodo-ts/tree/main/client/static/media/123.df968203fbe015eb5b23.jpg",
+    "static/media/prog1.jpg": "/Khamzaatov/StickyTodo-ts/tree/main/client/static/media/prog1.d2822308c8ddfd7fea0c.jpg",
+    "static/media/borz.jpg": "/Khamzaatov/StickyTodo-ts/tree/main/client/static/media/borz.d5c328da26ada04827fe.jpg",
+    "index.html": "/Khamzaatov/StickyTodo-ts/tree/main/client/index.html",
+    "main.bd8ce373.css.map": "/Khamzaatov/StickyTodo-ts/tree/main/client/static/css/main.bd8ce373.css.map",
+    "main.0464b882.js.map": "/Khamzaatov/StickyTodo-ts/tree/main/client/static/js/main.0464b882.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b817723.css",
-    "static/js/main.7e7845ec.js"
+    "static/css/main.bd8ce373.css",
+    "static/js/main.0464b882.js"
   ]
 }
