@@ -2,8 +2,10 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const cors = require('cors')
+const connectDB = require('./connectMongo')
 
 dotenv.config()
+connectDB()
 
 const app = express()
 
