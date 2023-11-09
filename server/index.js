@@ -5,7 +5,6 @@ const cors = require('cors')
 const connectDB = require('./connectMongo')
 
 dotenv.config()
-connectDB()
 
 const app = express()
 
@@ -19,18 +18,6 @@ app.get("/", (req, res) => {
 })
 
 mongoose.set('strictQuery', false)
+connectDB()
 
-const start = async () => {
-    try {
-        await mongoose.connect(process.env.MONGO)
-
-        app.listen(4000, () => {
-            console.log('Connecteeeeeeed')
-        })
-    } catch (error) {
-        console.log(error, 'Ошибка сервера!')
-    }
-}
-
-start()
  
