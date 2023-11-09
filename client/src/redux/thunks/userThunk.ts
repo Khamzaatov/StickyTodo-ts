@@ -9,7 +9,7 @@ interface authData {
 export const signInThunk = createAsyncThunk<User, authData, { rejectValue: string }>(
   'user/signIn',
   async ({ username, password }, { rejectWithValue }) => {
-    const response = await fetch('http://localhost:4000/login', {
+    const response = await fetch('https://stickytodos.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export const signInThunk = createAsyncThunk<User, authData, { rejectValue: strin
 export const signUpThunk = createAsyncThunk<unknown, authData, { rejectValue: string }>(
   'user/signUpThunk',
   async ({ username, password }, { rejectWithValue }) => {
-    const response = await fetch('http://localhost:4000/registration', {
+    const response = await fetch('https://stickytodos.onrender.com/registration', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

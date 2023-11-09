@@ -11,7 +11,7 @@ export const fetchTodos = createAsyncThunk<Todo[], void, { rejectValue: string }
   'todos/fetchTodos',
   async (_, { getState, rejectWithValue }) => {
     const { user } = (await getState()) as { user: { userId: string } };
-    const response = await fetch(`http://localhost:4000/todo/${user.userId}`);
+    const response = await fetch(`https://stickytodos.onrender.com/todo/${user.userId}`);
 
     if (!response.ok) {
       return rejectWithValue('Ошибка сервера!');
@@ -27,7 +27,7 @@ export const addTodos = createAsyncThunk<Todo, changeItem, { rejectValue: string
   'todos/addTodos',
   async ({ title, text }, { getState, rejectWithValue }) => {
     const { user } = (await getState()) as { user: { userId: string } };
-    const response = await fetch(`http://localhost:4000/todo/add/${user.userId}`, {
+    const response = await fetch(`https://stickytodos.onrender.com/todo/add/${user.userId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export const removeTodos = createAsyncThunk<
   { rejectValue: string }
 >('todos/removeTodos', async ({ id }, { getState, rejectWithValue }) => {
   const { user } = (await getState()) as { user: { userId: string } };
-  const response = await fetch(`http://localhost:4000/todo/delete/${user.userId}`, {
+  const response = await fetch(`https://stickytodos.onrender.com/todo/delete/${user.userId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ export const checkTodos = createAsyncThunk<{ id: string }, { id: string }, { rej
   'todos/checkTodos',
   async ({ id }, { getState, rejectWithValue }) => {
     const { user } = (await getState()) as { user: { userId: string } };
-    const response = await fetch(`http://localhost:4000/todo/update/${user.userId}`, {
+    const response = await fetch(`https://stickytodos.onrender.com/todo/update/${user.userId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ export const editTodos = createAsyncThunk<changeItem, changeItem, { rejectValue:
   'todos/editTodos',
   async ({ id, title, text }, { getState, rejectWithValue }) => {
     const { user } = (await getState()) as { user: { userId: string } };
-    const response = await fetch(`http://localhost:4000/todo/edit/${user.userId}`, {
+    const response = await fetch(`https://stickytodos.onrender.com/todo/edit/${user.userId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
